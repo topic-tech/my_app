@@ -20,3 +20,7 @@ config :my_app, MyAppWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+if System.get_env("CI") do
+  import_config "test.secret.exs"
+end
